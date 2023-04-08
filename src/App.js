@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import SearchHeader from "./components/SearchHeader";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { YoutubeApiProvider } from "./context/YoutubeContextApi";
 
 const queryClient = new QueryClient();
 
@@ -9,9 +10,12 @@ const App = () => {
   return (
     <>
       <SearchHeader />
-      <QueryClientProvider client={queryClient}>
-        <Outlet />
-      </QueryClientProvider>
+
+      <YoutubeApiProvider>
+        <QueryClientProvider client={queryClient}>
+          <Outlet />
+        </QueryClientProvider>
+      </YoutubeApiProvider>
     </>
   );
 };

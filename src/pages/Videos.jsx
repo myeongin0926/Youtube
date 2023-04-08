@@ -2,21 +2,17 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
+import { useYoutubeApi } from "../context/YoutubeContextApi";
 
 const Videos = () => {
   const { keyword } = useParams();
-
+  const { youtube } = useYoutubeApi();
   const {
     isLoading,
     error,
     data: videos,
-  } = useQuery(["videos", keyword], async () => {
-    fetch(`/videos/${keyword ? "search" : "popular"}.json`, {}).then((res) => {
-      res.data();
-    });
-  });
+  } = useQuery(["videos", keyword], () => youtube.search(keyword));
 
-  //   console.log(fetch("/videos/search.json").then((res) => res.json()));
   return (
     <>
       <div>Videos {keyword ? `🔍${keyword}` : "🔥"}</div>

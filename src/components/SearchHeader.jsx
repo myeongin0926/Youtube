@@ -23,7 +23,7 @@ const Header = () => {
     <header className="flex text-3xl p-2 border-b-zinc-700 border-b ">
       <Link to="/" className="flex items-center">
         <img src={logo} alt="logo" className="w-9" />
-        <h1 className="font-pathway pl-1 text-white font-bold">Youtube</h1>
+        <h1 className="font-pathway pl-1  font-bold">Youtube</h1>
       </Link>
       <form
         action=""
@@ -32,7 +32,7 @@ const Header = () => {
       >
         <input
           className="rounded-l-full leading-10 text-base border border-solid border-slate-800 
-          w-2/6 h-10 pl-4 ml-10 bg-stone-950 text-white  focus:outline-none"
+          w-2/6 h-10 pl-4 ml-10 bg-stone-950  focus:outline-none"
           type="text"
           value={searchText}
           placeholder="검색"
@@ -45,7 +45,7 @@ const Header = () => {
           className="flex items-center justify-center border border-solid
            border-slate-800 w-16 h-10 rounded-r-full bg-zinc-800 "
         >
-          <HiMagnifyingGlass className="text-xl text-white" />
+          <HiMagnifyingGlass className="text-xl" />
         </button>
       </form>
     </header>
