@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import logo from "../images/logo.png";
+import logo from "../../images/logo.png";
 
 const Header = () => {
   const [searchText, setSearchText] = useState("");
