@@ -18,9 +18,15 @@ const Videos = () => {
       {isLoading && <p>loading</p>}
       {error && <p>error</p>}
       {videos && (
-        <ul className="grid w-9/12 mx-auto pt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 gap-y-4">
+        <ul
+          className={
+            keyword
+              ? "flex w-full flex-col lg:w-8/12 sm:mx-auto"
+              : "grid w-9/12 mx-auto pt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 gap-y-4"
+          }
+        >
           {videos.map((video) => (
-            <VideoCard key={video.id} video={video} />
+            <VideoCard key={video.id} video={video} keyword={keyword} />
           ))}
         </ul>
       )}
